@@ -157,7 +157,7 @@ func Register(scheme Scheme) {
 	// add aliases
 	var hasShort bool
 	for _, alias := range scheme.Aliases {
-		if len(alias) == 2 {
+		if len(alias) <= 3 {
 			hasShort = true
 		}
 		if scheme.Driver != alias {

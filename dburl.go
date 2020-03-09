@@ -79,6 +79,7 @@
 //   -----------------------------|--------------------------------------------
 //   Amazon Redshift (redshift)   | rs [postgres]
 //   CockroachDB (cockroachdb)    | cr, cockroach, crdb, cdb [postgres]
+//   CrateDB (cratedb)            | cr8, crate [postgres]
 //   MemSQL (memsql)              | me [mysql]
 //   TiDB (tidb)                  | ti [mysql]
 //   Vitess (vitess)              | vt [mysql]
@@ -126,6 +127,7 @@
 //   -----------------------------|-------------------------------------------------
 //   Amazon Redshift (redshift)   | github.com/lib/pq
 //   CockroachDB (cockroachdb)    | github.com/lib/pq
+//   CrateDB (cratedb)            | github.com/lib/pq
 //   MemSQL (memsql)              | github.com/go-sql-driver/mysql
 //   TiDB (tidb)                  | github.com/go-sql-driver/mysql
 //   Vitess (vitess)              | github.com/go-sql-driver/mysql

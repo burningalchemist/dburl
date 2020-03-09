@@ -35,6 +35,10 @@ func TestBadParse(t *testing.T) {
 		{`cockroach+unix:/var/run/postgresql`, ErrInvalidTransportProtocol},
 		{`cockroach:./path`, ErrInvalidTransportProtocol},
 		{`cockroach+unix:./path`, ErrInvalidTransportProtocol},
+		{`crate:/var/run/postgresql`, ErrInvalidTransportProtocol},
+		{`crate+unix:/var/run/postgresql`, ErrInvalidTransportProtocol},
+		{`crate:./path`, ErrInvalidTransportProtocol},
+		{`crate+unix:./path`, ErrInvalidTransportProtocol},
 		{`redshift:/var/run/postgresql`, ErrInvalidTransportProtocol},
 		{`redshift+unix:/var/run/postgresql`, ErrInvalidTransportProtocol},
 		{`redshift:./path`, ErrInvalidTransportProtocol},
@@ -154,6 +158,8 @@ func TestParse(t *testing.T) {
 		{`sf://user:pass@localhost:9999/dbname/schema?timeout=1000`, `snowflake`, `user:pass@localhost:9999/dbname/schema?timeout=1000`, ``},
 
 		{`rs://user:pass@amazon.com/dbname`, `postgres`, `postgres://user:pass@amazon.com:5439/dbname`, ``}, // 67
+
+		{`cr8://user:pass@localhost:5432/dbname`, `postgres`, `postgres://user:pass@localhost:5432/dbname`, ``},
 
 		{`ve://user:pass@vertica-host/dbvertica?tlsmode=server-strict`, `vertica`, `vertica://user:pass@vertica-host:5433/dbvertica?tlsmode=server-strict`, ``}, // 68
 	}
